@@ -5,8 +5,8 @@
 </head>
 <body>
 	<form method="post" action="minichat_post.php">
-		<label for="pseudo">Pseudo : </label><input type="text" name="pseudo" id="pseudo"><br/>
-		<label for="message">Message : </label><input type="text" name="message" id="message"><br/>
+		<label for="pseudo">Pseudo : </label><input type="text" name="pseudo" id="pseudo" required><br/>
+		<label for="message">Message : </label><input type="text" name="message" id="message" required><br/>
 		<input type="submit" name="envoyer" value="Envoyer">
 	</form>
 	<br/>
