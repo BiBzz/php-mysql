@@ -1,0 +1,46 @@
+html
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+body
+{
+	width: 800px;
+	background-color: grey;
+}
+
+#chatzone
+{
+	background-color: white;
+	padding: 0 10px 0 10px;
+	border: 2px black inset;
+}
+
+form
+{
+	display: flex;
+	background-color: white;
+	padding: 10px;
+	border: 2px black inset;
+}
+
+#textboxes
+{
+	display: flex;
+	flex-direction: column;
+	flex:1;
+}
+
+#pseudobox
+{
+	display: flex;
+}
+
+#message
+{
+	height: 50px;
+}

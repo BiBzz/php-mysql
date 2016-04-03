@@ -3,25 +3,13 @@
 ?>
 <!DOCTYPE html>
 <html>
+	<link rel="stylesheet" type="text/css" href="minichat.css">
+	<meta charset="utf-8"/>
 	<title>Minichat</title>
 </head>
 <body>
-	<form method="post" action="minichat_post.php">
-		<?php
-		if (isset($_COOKIE['pseudo']))
-		{
-			echo '<label for="pseudo">Pseudo : </label><input type="text" name="pseudo" id="pseudo" value=' . $_COOKIE['pseudo'] . ' required><br/>';
-		}
-		else
-		{
-			echo '<label for="pseudo">Pseudo : </label><input type="text" name="pseudo" id="pseudo" required><br/>';
-		}
-		?>
-		<label for="message">Message : </label><input type="text" name="message" id="message" required><br/>
-		<input type="submit" name="envoyer" value="Envoyer">
-	</form>
-	<br/>
-<?php
+	<section id="chatzone">	
+	<?php
 	//Database connection
 	try
 	{
@@ -36,9 +24,28 @@
 	//Display each messages with related pseudo
 	while ($donnees = $reponse->fetch())
 	{
-		echo '<p><strong>' . $donnees['pseudo'] . '</strong> : ' . $donnees['message'] . '</p>';
+		echo '<p><strong>' . $donnees['pseudo'] . '</strong> :<br/>' . $donnees['message'] . '</p>';
 	}
 	$reponse->closeCursor();
-?>
+	?>
+	</section>
+	<br/>
+	<form method="post" action="minichat_post.php">
+		<div id="textboxes">
+			<?php
+			if (isset($_COOKIE['pseudo']))
+			{
+				echo '<div id:"pseudobox"><label for="pseudo">Pseudo : </label><input type="text" name="pseudo" id="pseudo" value=' . $_COOKIE['pseudo'] . ' required></div><br/>';
+			}
+			else
+			{
+				echo '<label for="pseudo">Pseudo : </label><input type="text" name="pseudo" id="pseudo" required><br/>';
+			}
+			?>
+			<label for="message">Message : </label><input type="text" name="message" id="message" required><br/>
+		</div>
+		<input type="submit" name="envoyer" id="submit" value="Envoyer">
+	</form>
+	
 </body>
 </html>
