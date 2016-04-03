@@ -1,6 +1,4 @@
-<?php
-	setcookie('pseudo','Alex',time()+360*24*3600,null,null,false,true);
-?>
+<?php setcookie('pseudo','Alex',time()+360*24*3600,null,null,false,true);?>
 <!DOCTYPE html>
 <html>
 	<link rel="stylesheet" type="text/css" href="minichat.css">
@@ -39,7 +37,7 @@
 			}
 			else
 			{
-				echo '<label for="pseudo">Pseudo : </label><input type="text" name="pseudo" id="pseudo" required><br/>';
+				echo '<div id:"pseudobox"><label for="pseudo">Pseudo : </label><input type="text" name="pseudo" id="pseudo" required></div><br/>';
 			}
 			?>
 			<label for="message">Message : </label><input type="text" name="message" id="message" required><br/>
