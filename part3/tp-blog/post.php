@@ -17,8 +17,7 @@ catch(Exception $e)
 $req = $bdd->prepare('SELECT title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts WHERE id = :postid');
 //$req = $bdd->prepare('SELECT * FROM posts WHERE id = :postid');
 $req->execute(array('postid' => $_GET['post_id']));
-while ($post = $req->fetch())
-{
+$post = $req->fetch();
 	echo	
 '	<title>' . $post['title'] . '</title>
 </head>
@@ -32,7 +31,6 @@ echo
 	</div>
 	<h4>Comments</h4>
 	';
-}
 //Close the database resquest
 $req->closeCursor();
 
