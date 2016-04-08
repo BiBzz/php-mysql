@@ -21,9 +21,9 @@
 	{
 		echo '<title>' . $comment['post-title'] . '</title>
 		</head>
-		<body>
-
-		</body>
+		<body>';
+			include("blog-header.php");
+		echo '</body>
 		</html>';
 		$req->closeCursor();
 	}
